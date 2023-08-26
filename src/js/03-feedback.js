@@ -34,7 +34,6 @@ formEl.addEventListener('submit', e => {
   e.preventDefault;
   console.log(feedback);
 
-  emailEl.value = '';
-  messageEl.value = '';
-  localStorage.clear();
+  formEl.reset();
+  localStorage.removeItem('feedback-form-state');
 });
