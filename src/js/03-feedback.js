@@ -11,15 +11,11 @@ const feedback = {
 
 formEl.addEventListener('input', throttle(onFormInputHandler, 500));
 
-function onFormInputHandler(event) {
-  if (event.target.name === 'email') {
-    feedback.email = event.target.value.trim();
-    localStorage.setItem('feedback-form-state', JSON.stringify(feedback));
-  }
-  if (event.target.name === 'message') {
-    feedback.message = event.target.value.trim();
-    localStorage.setItem('feedback-form-state', JSON.stringify(feedback));
-  }
+function onFormInputHandler() {
+  feedback.email = emailEl.value;
+  feedback.message = messageEl.value;
+
+  localStorage.setItem('feedback-form-state', JSON.stringify(feedback));
 }
 
 function setFormValues() {
@@ -36,7 +32,9 @@ setFormValues();
 
 formEl.addEventListener('submit', e => {
   e.preventDefault;
-  localStorage.clear();
+  console.log(feedback);
+
   emailEl.value = '';
   messageEl.value = '';
+  localStorage.clear();
 });
