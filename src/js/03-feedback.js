@@ -31,7 +31,7 @@ function setFormValues() {
 setFormValues();
 
 formEl.addEventListener('submit', e => {
-  e.preventDefault;
+  e.preventDefault();
   console.log(feedback);
 
   formEl.reset();
