@@ -36,6 +36,8 @@ formEl.addEventListener('submit', e => {
   } else {
     e.preventDefault();
 
+    feedback.email = emailEl.value;
+    feedback.message = messageEl.value;
     console.log(feedback);
 
     formEl.reset();
