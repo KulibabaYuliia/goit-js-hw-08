@@ -4,7 +4,7 @@ const formEl = document.querySelector('.feedback-form');
 const emailEl = formEl.querySelector("input[name = 'email']");
 const messageEl = formEl.querySelector("textarea[name = 'message']");
 
-const feedback = {
+let feedback = {
   email: '',
   message: '',
 };
