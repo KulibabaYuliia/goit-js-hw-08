@@ -31,9 +31,16 @@ function setFormValues() {
 setFormValues();
 
 formEl.addEventListener('submit', e => {
-  e.preventDefault();
-  console.log(feedback);
+  if (emailEl.value === '' || messageEl.value.trim() === '') {
+    alert('All fileld should be filled');
+  } else {
+    e.preventDefault();
 
-  formEl.reset();
-  localStorage.removeItem('feedback-form-state');
+    console.log(feedback);
+
+    formEl.reset();
+    localStorage.removeItem('feedback-form-state');
+    feedback.email = '';
+    feedback.message = '';
+  }
 });
