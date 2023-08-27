@@ -31,11 +31,11 @@ function setFormValues() {
 setFormValues();
 
 formEl.addEventListener('submit', e => {
+  e.preventDefault();
+
   if (emailEl.value === '' || messageEl.value.trim() === '') {
     alert('All fileld should be filled');
   } else {
-    e.preventDefault();
-
     feedback.email = emailEl.value;
     feedback.message = messageEl.value;
     console.log(feedback);
