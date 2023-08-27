@@ -42,7 +42,6 @@ formEl.addEventListener('submit', e => {
 
     formEl.reset();
     localStorage.removeItem('feedback-form-state');
-    feedback.email = '';
-    feedback.message = '';
+    feedback = {};
   }
 });
